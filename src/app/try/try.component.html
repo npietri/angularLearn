@@ -1,0 +1,41 @@
+<div class="cadreTryComponent">
+  <p>try works! backgroud vert</p>
+
+  <div style="text-align:center">
+    <h1>
+      {{ title }}
+    </h1>
+
+    {{square(5)}}
+
+    <hr>
+
+
+    <div style="width:200px; height:200px" [style.backgroundColor]="color" (click)="changeColor('green')"
+      (mouseenter)="changeColor('blue')" (mouseleave)="changeColor('red')">
+      <hr>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <input type="text" [(ngModel)]="content">
+      <p>{{content}}</p>
+      <hr>
+      <p *ngIf="display"> bonjour </p>
+      <button (click)="display=!display">bouton</button>
+    </div>
+
+
+    <hr>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <input type="text" placeholder="ecris la couleur pour faire changer le carré de couleur 
+  " [(ngModel)]="carreColor" />
+    <div [ngStyle]="{
+      width:'200px',
+      height :'200px',
+      backgroundColor : carreColor
+  }"></div>
+
+    <ul>
+      <li *ngFor="let user of users ; let i = index;">{{user.nom}}| {{i}} </li>
+    </ul>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
